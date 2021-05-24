@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: url(../images/1.jpg);
+    background-size: cover;
+    animation: fade-in;/*动画名称*/  
+    animation-duration: 2s;/*动画持续时间*/  
+    -webkit-animation:fade-in 2;/*针对webkit内核*/ 
+}
+.container {
+    position: relative;
+    width: 90%;
+    height: 300px;
+    margin: 80px auto 0;
+    background-color: rgb(110, 177, 245);
+    animation: fade-in;/*动画名称*/  
+    animation-duration: 1.5s;/*动画持续时间*/  
+    -webkit-animation:fade-in 1.5s;/*针对webkit内核*/ 
+}
+@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    40% {opacity: 0;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+}  
+/* .container .fisrstnav {
+    transition-delay: 50ms;
+}
+
+.container iframe {
+    transition-delay: 400ms;
+} */
+.container ul {
+    margin-top: 5px;
+    background-color: rgb(25, 141, 187);
+    list-style: none;
+}
+.container ul li {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.container ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    /* margin: 2px auto; */
+}
+.active {
+    background-color: slateblue;
+}
+
+
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+.check {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background: #6bcafa;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+}
+input[type="checkbox"]:checked ~ .check{
+    background: #fff;
+    box-shadow: 0 0 0 1200px rgba(0, 0, 0, 0.7);
+}
+.check:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+input[type="checkbox"]:checked ~ .check:before{
+    transform: translateX(-50px);
+}
+.check:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: #092c3e;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: translateX(50px);
+}
+input[type="checkbox"]:checked ~ .check:after{
+    transform: translateX(0px);
+}
+/* .menu-button:after {
+    content: '+';
+    width: 30px;
+    height: 30px;
+    display: block;
+    color: #000;
+    font-size: 24px;
+    font-weight: lighter;
+    transition: all 300ms ease;
+}
+
+.menu-button:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.menu-button.menu-trigger--menu-open:after {
+    -webkit-transform: rotate(765deg);
+    transform: rotate(765deg);
+} */
+.arrow {
+    display: block;
+}
+
+.content:hover .arrow {
+    display: block;
+}
+
+.arrow-left,
+.arrow-right {
+    font-family: "SimSun", "宋体";
+    width: 30px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -30px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+}
+
+
+/* 音乐播放css */
+.controller {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    max-width: 80px;
+    height: 50px;
+}
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #222427;
+    border-radius: 50%;
+    /* margin: 2rem auto; */
+    display: flex;
+    border: 3px solid #37b0d8;
+    border-top: 3px solid #0254ec;
+   
+}
+.circle2 {
+    width: 40px;
+    height: 40px;
+    background-color: #252629;
+    border-radius: 50%;
+    border: 1px solid #282529;
+    border-top: 1px solid #66bfe9;
+    align-self: center;
+    display: flex;
+    margin: auto;
+    
+}
+.circle2 .fluid-img{
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    border-radius: 50%;
+    align-self: center;
+    margin: auto;
+}
+.songs {
+    position: fixed;
+    top: 10px;
+    left: 80px;
+    height: 50px;
+    width: 100px;
+}
+#song-name{
+    color: #15253a;
+    font-size: 10px;
+    font-weight: 400;
+}
+.songs .controls {
+    height: 100px;
+    width: 150px;
+}
+.circle.animate {
+    animation: anticlock 6s infinite linear;
+}
+.circle2.animate {
+    animation: clockwise 6s infinite linear;
+}
+.media-btn {
+    width: 100%;
+    width: 30px;
+    max-width: 50px;
+    height: auto;
+    margin: auto;
+    cursor: pointer;
+    /* margin: 1rem; */
+}
+#circle-bg .media-btn{
+    width: 20px;
+    height: 0px;
+    /* height: auto; */
+    margin: auto;
+    cursor: pointer;
+    /* margin: 1rem; */
+
+}
+
+/* 动画 */
+@keyframes anticlock {
+    from {
+        transform: rotate(360deg);
+    } to {
+        transform: rotate(0deg);
+    }
+}
+@keyframes clockwise {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 头部TAB栏切换 */
+#tab {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width:30%;
+    height: 50px;
+    z-index: 100000;
+    /* overflow: hidden; */
+    overflow-y: scroll;
+}
+::-webkit-scrollbar  
+{  
+    width: 5px;  
+    /* height: 1px;  
+    background-color: #ee6c8c;   */
+}  
+
+::-webkit-scrollbar-track
+{
+	border: 7px solid #232943;
+    box-shadow: inset 0 0 2.5px 2px rgba(0,0,0,0.5);
+	
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(
+        45deg,
+        #e1063d,
+        #fa87a0
+    );
+    border-radius: 3px;
+}
+
+#tab li {
+    float: left;
+    width: 25%;
+    height: 95%;
+    box-sizing: border-box;
+    border: 4px solid skyblue;
+    /* text-decoration: none; */
+    white-space: nowrap;
+    list-style: none;
+}
+#tab li img {
+    height: 100%;
+    width: 100%;
+    /* border: 6px solid brown; */
+    box-sizing: border-box;
+    cursor: pointer;
+
+}
